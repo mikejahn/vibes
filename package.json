@@ -1,0 +1,29 @@
+{
+  "name": "vibes",
+  "version": "1.0.0",
+  "description": "CLI for managing project tasks",
+  "main": "dist/index.js",
+  "bin": {
+    "vibes": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsc -w"
+  },
+  "keywords": [
+    "cli",
+    "tasks",
+    "project-management"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.11.24",
+    "commander": "^12.0.0",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "clipboardy": "^4.0.0"
+  }
+}

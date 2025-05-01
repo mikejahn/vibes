@@ -1,0 +1,9 @@
+[
+  {
+    "name": "Make a feature permanent",
+    "command": "make-feature-permanent",
+    "available_variables": ["toggle_name"],
+    "prompt": "Do something with {{toggle_name}}",
+    "how_to_use": "vibes execute make-feature-permanent 'some_toggle_name'"
+  }
+] 
