@@ -137,11 +137,7 @@ npm run build
 ```bash
 npm run build
 ```
-3. Test your changes:
-```bash
-npm test
-```
-4. Install the updated version:
+3. Install the updated version:
 ```bash
 npm install -g .
 ```
@@ -155,10 +151,7 @@ npm install -g .
 
 ### Testing
 
-Run the test suite:
-```bash
-npm test
-```
+TODO
 
 ### Building for Distribution
 
