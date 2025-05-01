@@ -103,7 +103,7 @@ npm run build
 ```
 3. Install the updated version:
 ```bash
-sudo npm install . -g
+npm install -g .
 ```
 
 ### Contributing
