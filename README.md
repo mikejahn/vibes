@@ -81,6 +81,26 @@ cd vibes
 yarn
 ```
 
+### Testing
+
+The project uses Jest for testing. The test suite includes:
+- Unit tests for CLI commands
+- Integration tests for file system operations
+- Error handling tests
+- Success and failure case coverage
+
+To run tests:
+
+```bash
+# Run tests once
+npm test
+
+# Run tests in watch mode (useful during development)
+npm run test:watch
+```
+
+Test files are located in `src/__tests__/` and follow the naming pattern `*.test.ts`.
+
 ### Project Structure
 
 ```
@@ -112,10 +132,6 @@ npm install -g .
 2. Create a feature branch
 3. Make your changes
 4. Submit a pull request
-
-### Testing
-
-TODO
 
 ### Building for Distribution
 
