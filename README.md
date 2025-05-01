@@ -13,6 +13,19 @@ Vibes is a command-line interface (CLI) tool that helps you manage and execute A
 
 ## How to use this tool
 
+1.  First, add a folder in your codebase called `vibes`.  In that folder create a file called `tasks.json`.
+2.  The format of that json file is as follows:
+
+```json
+{
+  "name": "Do some task", // the name of the task
+  "command": "do-some-task", // the actual command that you can run
+  "available_variables": ["some_variable"], // an array of variables you can use
+  "prompt": "Do something with {{some_variable}}", // the baseline prompt that will be used to copy to your clipboard
+  "how_to_use": "vibes execute do-some-task 'some_variable'" // a How To which explains to the user how to use execute this task
+}
+```
+
 ### Basic Commands
 
 1. List all available tasks:
