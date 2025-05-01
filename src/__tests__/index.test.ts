@@ -9,6 +9,7 @@ const execAsync = promisify(exec);
 describe('Vibes CLI', () => {
   const testTasksPath = path.join(process.cwd(), 'vibes', 'tasks.json');
   const originalTasksPath = path.join(process.cwd(), 'vibes', 'tasks.json.original');
+  const tempVibesPath = path.join(process.cwd(), 'vibes_temp');
 
   // Setup: Create a test tasks.json file
   beforeAll(async () => {
@@ -42,6 +43,10 @@ describe('Vibes CLI', () => {
       fs.unlinkSync(originalTasksPath);
     } else {
       fs.unlinkSync(testTasksPath);
+    }
+    // Clean up temp directory if it exists
+    if (fs.existsSync(tempVibesPath)) {
+      fs.rmSync(tempVibesPath, { recursive: true, force: true });
     }
   });
 
@@ -79,18 +84,21 @@ describe('Vibes CLI', () => {
 
   describe('error handling', () => {
     it('should handle missing vibes directory', async () => {
-      // Temporarily rename the vibes directory
-      const tempPath = path.join(process.cwd(), 'vibes_temp');
-      fs.renameSync(path.dirname(testTasksPath), tempPath);
+      // Move the vibes directory to a temporary location
+      if (fs.existsSync(path.dirname(testTasksPath))) {
+        fs.renameSync(path.dirname(testTasksPath), tempVibesPath);
+      }
 
       try {
         await execAsync('vibes list');
       } catch (error: any) {
         expect(error.message).toContain('vibes folder not found');
+      } finally {
+        // Restore the directory
+        if (fs.existsSync(tempVibesPath)) {
+          fs.renameSync(tempVibesPath, path.dirname(testTasksPath));
+        }
       }
-
-      // Restore the directory
-      fs.renameSync(tempPath, path.dirname(testTasksPath));
     });
 
     it('should handle invalid tasks.json', async () => {

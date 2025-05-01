@@ -83,12 +83,6 @@ yarn
 
 ### Testing
 
-The project uses Jest for testing. The test suite includes:
-- Unit tests for CLI commands
-- Integration tests for file system operations
-- Error handling tests
-- Success and failure case coverage
-
 To run tests:
 
 ```bash
