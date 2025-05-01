@@ -101,7 +101,7 @@ vibes/
 ```bash
 npm run build
 ```
-3. Install the updated version:
+3. Install:
 ```bash
 npm install -g .
 ```
