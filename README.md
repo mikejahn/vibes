@@ -27,20 +27,20 @@ vibes execute <command> <variables...>
 
 ### Example
 
-Given a task defined in `vibes/tasks.json`:
+Given a task defined in `vibes/tasks.json` in your codebase:
 ```json
 {
-  "name": "Make a feature permanent",
-  "command": "make-feature-permanent",
-  "available_variables": ["toggle_name"],
-  "prompt": "Do something with {{toggle_name}}",
-  "how_to_use": "vibes execute make-feature-permanent 'some_toggle_name'"
+  "name": "Do some task",
+  "command": "do-some-task",
+  "available_variables": ["some_variable"],
+  "prompt": "Do something with {{some_variable}}",
+  "how_to_use": "vibes execute do-some-task 'some_variable'"
 }
 ```
 
 You can execute it with:
 ```bash
-vibes execute make-feature-permanent "my_toggle"
+vibes execute do-some-task "some_variable"
 ```
 
 The result will be displayed and automatically copied to your clipboard.
