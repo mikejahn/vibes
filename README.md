@@ -17,13 +17,15 @@ Vibes is a command-line interface (CLI) tool that helps you manage and execute A
 2.  The format of that json file is as follows:
 
 ```json
-{
-  "name": "Do some task", // the name of the task
-  "command": "do-some-task", // the actual command that you can run
-  "available_variables": ["some_variable"], // an array of variables you can use
-  "prompt": "Do something with {{some_variable}}", // the baseline prompt that will be used to copy to your clipboard
-  "how_to_use": "vibes execute do-some-task 'some_variable'" // a How To which explains to the user how to use execute this task
-}
+[
+    {
+    "name": "Do some task", // the name of the task
+    "command": "do-some-task", // the actual command that you can run
+    "available_variables": ["some_variable"], // an array of variables you can use
+    "prompt": "Do something with {{some_variable}}", // the baseline prompt that will be used to copy to your clipboard
+    "how_to_use": "vibes execute do-some-task 'some_variable'" // a How To which explains to the user how to use execute this task
+    }
+]
 ```
 
 ### Basic Commands
