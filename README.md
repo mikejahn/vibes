@@ -60,19 +60,6 @@ vibes execute do-some-task "some_variable"
 
 The result will be displayed and automatically copied to your clipboard.
 
-## How to install this tool
-
-### Global Installation
-
-```bash
-npm install -g vibes
-```
-
-### Local Installation
-
-```bash
-npm install vibes --save-dev
-```
 
 ## How to develop this tool
 
@@ -91,12 +78,7 @@ cd vibes
 
 2. Install dependencies:
 ```bash
-npm install
-```
-
-3. Build the project:
-```bash
-npm run build
+yarn
 ```
 
 ### Project Structure
@@ -112,28 +94,8 @@ vibes/
 └── tsconfig.json      # TypeScript configuration
 ```
 
-### Adding New Tasks
-
-1. Create or edit `vibes/tasks.json`:
-```json
-[
-  {
-    "name": "Your Task Name",
-    "command": "your-command",
-    "available_variables": ["variable1", "variable2"],
-    "prompt": "Your AI prompt with {{variable1}} and {{variable2}}",
-    "how_to_use": "vibes execute your-command 'value1' 'value2'"
-  }
-]
-```
-
-2. Rebuild the project:
-```bash
-npm run build
-```
 
 ### Development Workflow
-
 1. Make changes to the source code in `src/`
 2. Build the project:
 ```bash
@@ -141,7 +103,7 @@ npm run build
 ```
 3. Install the updated version:
 ```bash
-npm install -g .
+sudo npm install . -g
 ```
 
 ### Contributing
